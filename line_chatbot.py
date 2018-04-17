@@ -14,7 +14,7 @@ from my_token import MyToken
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi(MyToken.Channel_ID)
+line_bot_api = LineBotApi(MyToken.CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(MyToken.Channel_SECRET)
 # line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
 # handler = WebhookHandler('YOUR_CHANNEL_SECRET')
