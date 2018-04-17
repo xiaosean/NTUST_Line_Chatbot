@@ -43,6 +43,9 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=event.message.text))
 
+@app.route('/')
+def homepage():
+    return 'Hello, World!'
 
 if __name__ == "__main__":
     app.run()
