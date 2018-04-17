@@ -1,0 +1,22 @@
+{
+  "name": "NTUST_Computer_Club_Line_Chatbot",
+  "description": "Line Chatbot demo.",
+  "image": "heroku/python",
+  "repository": "https://github.com/xiaosean/NTUST_Line_Chatbot",
+  "keywords": ["python", "flask" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
