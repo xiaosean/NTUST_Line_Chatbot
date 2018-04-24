@@ -8,6 +8,9 @@ gunicorn = "*"
 django-heroku = "*"
 flask = "*"
 line-bot-sdk = "*"
+apscheduler = "*"
+pyquery = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.6"
