@@ -79,8 +79,10 @@ def handle_message(event):
 
     elif event.message.text == "本週多益單字":
         link = download_vocab()
+        print("link =", link)
         if(link[:4] == "http"):
             link = link.replace("http", "https")
+            print("link https =", link)
             line_bot_api.reply_message(
                 event.reply_token,
                 ImageSendMessage(original_content_url=link, preview_image_url=link)
@@ -143,7 +145,7 @@ def get_free_classroom():
         return ERROR_MSG
     else:
         info = "目前的時段(本小時)\n可使用的教室為\n"
-        if(free_rooms):
+        if(free_rooms.any()):
             for classroom in free_rooms:
                 info += classroom + '\n'
         else:

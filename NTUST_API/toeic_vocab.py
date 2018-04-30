@@ -9,10 +9,14 @@ class ToeicVocab():
 		
 	def get_image_href(self):
 		web=pq(url="http://fls.ntust.edu.tw/files/11-1094-5131.php?Lang=zh-tw")
+		
 		for col in web(".col_02").find(".col_02").find(".mm_01").find(".mc"):
 			href=web(col).find(".ptname").find("a").attr("href")
 			redirect_web= pq(url=href)
-			download_href="http://fls.ntust.edu.tw"+redirect_web(".col_02").find(".col_middle").find("#Dyn_2_2").find(".mm_01").find("img").attr("src")
+			download_href = redirect_web(".col_02").find(".col_middle").find("#Dyn_2_2").find(".mm_01").find("img").attr("src")
+			if download_href[:4] != "http":
+				download_href = "http://fls.ntust.edu.tw"+redirect_web(".col_02").find(".col_middle").find("#Dyn_2_2").find(".mm_01").find("img").attr("src")			
+			print("download_href =", download_href)
 			# i only get the newest
 			self.link = download_href
 			return download_href
