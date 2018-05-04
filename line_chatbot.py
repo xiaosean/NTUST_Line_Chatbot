@@ -121,9 +121,13 @@ def homepage():
     return 'Hello, World!'
 
 def download_vocab():
-    """
-    download toeic vocabulary
-    use this link:http://fls.ntust.edu.tw/files/11-1094-5131.php?Lang=zh-tw
+    """Download toeic vocabulary by ToeicVocab module
+    
+    Returns
+    ===============
+    link : str
+         URL link for this week's toeic vocabulary.
+
     """
     toeic_vocab = ToeicVocab()
     # toeic_vocab.download()
@@ -133,9 +137,12 @@ def download_vocab():
         return ERROR_MSG
 
 def get_free_classroom():
-    """
-    search free classroom
-    use this link:http://stuinfo.ntust.edu.tw/classroom_user/qry_classroom.htm
+    """Get free classroom string by FreeClassroom module
+
+    Returns
+    ===============
+    info : str
+        free classrooms
     """
     free_classroom = FreeClassroom()
     free_rooms = []
@@ -155,27 +162,30 @@ def get_free_classroom():
         pass
 
 def get_crosslink_info(search_name):
-    '''
-    search_name : string 想搜尋的人名
-    return 
-        image_link :str
-        courses :str
+    '''get someone crosslink's info
+    
+    Parameters
+    ==============
+    search_name : string 
+        想搜尋的人名
 
-        image_link => crosslink上的個人網址
-        courses => crosslink上的課程資訊
+    Returns 
+    ==============
+    A tuple (image_link, courses)
+        image_link: str
+            containing profile's image link and
+        courses: str 
+            containing the course's info from crosslink.
     '''
     
     CA = CrosslinkAnaylize()
     profile_link = CA.search_whos_profile(search_name)
     print(profile_link)
-    # print(profile_link)
     image_link = CA.get_profile_image_href(profile_link)
     courses = CA.get_profile_courses(profile_link)
     return (image_link, courses)
 
     
 if __name__ == "__main__":
-    # import imp,os
-    # imp.reload(CrosslinkAnaylize)
     app.run()
     
