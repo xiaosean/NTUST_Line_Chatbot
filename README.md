@@ -22,8 +22,8 @@ python line_chatbot.py
 
 # 成果
 
-![](RESULT_1.jpg =x500)
-![](RESULT_2.jpg =x500)
+![](RESULT_1.jpg =300x500)
+![](RESULT_2.jpg =300x500)
 
 # QR CODE
 
