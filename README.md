@@ -2,7 +2,7 @@
 使用Line Chatbot結合臺灣科技大學之功能
 
 
-#功能
+# 功能
 
 1.查詢本週多益單字
 2.查詢目前空教室
@@ -15,17 +15,17 @@ pip install flask
 pip install lint_chatbot_sdk
 ~~~
 
-#執行方式
+# 執行方式
 ~~~
 python line_chatbot.py
 ~~~
 
-#成果
+# 成果
 
 ![](RESULT_1.jpg)
 ![](RESULT_2.jpg)
 
-#QR CODE
+# QR CODE
 
 ![](LINE_QR.png)
 
