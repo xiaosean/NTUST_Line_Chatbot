@@ -61,7 +61,8 @@ class FreeClassroom():
 			data = [[pq(child).text() for child in pq(tr).children()] for tr in pq_page('table').eq(0).find("tr") if(len(pq(tr).text()))]
 		else:
 			raise ValueError('Sorry can not connect to server')
-		return pd.DataFrame(data=data[1:-1], columns=data[0])
+		df = pd.DataFrame(data=data[1:-1], columns=data[0])
+		return df
 
 	def get_free_classroom(self):
 		"""get Free classroom from NTUST website
